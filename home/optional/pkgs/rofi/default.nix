@@ -5,10 +5,9 @@
     cycle = true;
     location = "center";
     pass = { };
-    plugins = [
-      pkgs.rofi-calc
-      pkgs.rofi-emoji
-      pkgs.rofi-systemd
+    plugins = with pkgs; [
+      rofi-calc
+      rofi-emoji
     ];
     extraConfig = {
       hide-scrollbar = true;
@@ -18,21 +17,25 @@
   };
 
   home.file = {
-    ".local/share/rofi/themes/launcher.rasi" = {
-      source = ./launcher.rasi;
+    ".local/share/rofi/launcher/gruvbox-light.rasi" = {
+      source = ./launcher/theme/gruvbox-light.rasi;
     };
-    ".local/share/rofi/themes/powermenu.rasi" = {
-      source = ./powermenu.rasi;
+    ".local/share/rofi/launcher/tokyonight-dark.rasi" = {
+      source = ./launcher/theme/tokyonight-dark.rasi;
     };
-    ".local/share/rofi/themes/themesmenu.rasi" = {
-      source = ./themesmenu.rasi;
+    ".local/share/rofi/powermenu/theme/gruvbox-light.rasi" = {
+      source = ./powermenu/theme/gruvbox-light.rasi;
     };
-    ".local/share/rofi/themes/dark-theme.rasi" = {
-      source = ./dark-theme.rasi;
+    ".local/share/rofi/powermenu/theme/tokyonight-dark.rasi" = {
+      source = ./powermenu/theme/tokyonight-dark.rasi;
     };
-    ".local/share/rofi/themes/light-theme.rasi" = {
-      source = ./light-theme.rasi;
+    ".local/share/rofi/themesmenu/theme/gruvbox-light.rasi" = {
+      source = ./themesmenu/theme/gruvbox-light.rasi;
     };
+    ".local/share/rofi/themesmenu/theme/tokyonight-dark.rasi" = {
+      source = ./themesmenu/theme/tokyonight-dark.rasi;
+    };
+
     ".scripts/themesmenu.sh" = {
       source = builtins.toString ../../../scripts/themesmenu.sh;
       executable = true;
