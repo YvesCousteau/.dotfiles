@@ -14,7 +14,7 @@ no='󰅖 No'
 rofi_cmd() {
 	rofi -dmenu \
 		-p "$host" \
-		-theme $HOME/.local/share/rofi/themes/powermenu.rasi
+		-theme $HOME/.local/share/rofi/powermenu/theme/$THEME.rasi
 }
 
 # Confirmation CMD
@@ -27,7 +27,7 @@ confirm_cmd() {
 		-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
-		-theme $HOME/.local/share/rofi/themes/powermenu.rasi
+		-theme $HOME/.local/share/rofi/powermenu.rasi
 }
 
 # Ask for confirmation
