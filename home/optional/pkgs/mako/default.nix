@@ -13,7 +13,7 @@ in {
         textColor = "#3c3836";
         progressColor = "over #5588AA";
         borderRadius = 0;
-        borderSize = 4;
+        borderSize = 3;
         font = "FiraCode Nerd Font Mono 10";
         format = "<b>%s</b>\\n%b";
         groupBy = null;
