@@ -17,10 +17,10 @@
   };
 
   home.file = {
-    ".local/share/rofi/launcher/gruvbox-light.rasi" = {
+    ".local/share/rofi/launcher/theme/gruvbox-light.rasi" = {
       source = ./launcher/theme/gruvbox-light.rasi;
     };
-    ".local/share/rofi/launcher/tokyonight-dark.rasi" = {
+    ".local/share/rofi/launcher/theme/tokyonight-dark.rasi" = {
       source = ./launcher/theme/tokyonight-dark.rasi;
     };
     ".local/share/rofi/powermenu/theme/gruvbox-light.rasi" = {
@@ -36,8 +36,8 @@
       source = ./themesmenu/theme/tokyonight-dark.rasi;
     };
 
-    ".scripts/themesmenu.sh" = {
-      source = builtins.toString ../../../scripts/themesmenu.sh;
+    ".scripts/themesmenu.fish" = {
+      source = builtins.toString ../../../scripts/themesmenu.fish;
       executable = true;
     };
     ".scripts/powermenu.sh" = {

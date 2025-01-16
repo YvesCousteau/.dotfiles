@@ -30,6 +30,10 @@ in
       ../pkgs/mpv 
     ];
 
+  home.sessionVariables = {
+    THEME = "gruvbox-light";
+  };
+
   xdg.configFile = {
     "hypr/hyprland.conf".source = hyprlandConf;
     "hypr/windowrule.conf".source = ./windowrule.conf;
@@ -62,12 +66,5 @@ in
     ".local/share/icons" = {
       source = ../../cursors;
     };
-  };
-
-  # screenshot
-  home.activation = {
-    createDirectories = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      mkdir -p ~/Screenshots
-    '';
   };
 }
