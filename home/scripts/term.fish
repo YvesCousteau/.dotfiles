@@ -1,3 +1,6 @@
 #!/usr/bin/env fish
 
-kitty -c $HOME/.config/kitty/theme/$THEME.conf
+if test ! -e $HOME/.config/kitty/theme.conf
+    ln -sf ~/.config/kitty/theme/$THEME.conf ~/.config/kitty/theme.conf
+end
+kitty

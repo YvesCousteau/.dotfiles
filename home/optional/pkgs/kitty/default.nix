@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }:{
   imports = [
     ../tmux 
   ];
@@ -21,11 +21,17 @@
       "ctrl+shift+c" = "copy_to_clipboard";
       "ctrl+shift+v" = "paste_from_clipboard";
     };
-    extraConfig = builtins.readFile ./config.conf;
+    extraConfig = ''
+      italic_font auto
+      bold_font auto
+      bold_italic_font auto
+
+      include ./theme.conf
+    '';
   };
 
   xdg.configFile = {
-    "kitty/theme/gruvbox_light.conf" = {
+    "kitty/theme/gruvbox-light.conf" = {
       source = ./theme/gruvbox-light.conf;
     };
     "kitty/theme/tokyonight-dark.conf" = {

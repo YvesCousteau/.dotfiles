@@ -14,13 +14,23 @@ function run_rofi
 	echo -e "$tokyonight_dark\n$gruvbox_light" | rofi_cmd
 end
 
+function kitty_reload 
+    ln -sf ~/.config/kitty/theme/$THEME.conf ~/.config/kitty/theme.conf
+    kill -SIGUSR1 $(pgrep kitty)
+end
+
+function hyprland_reload 
+    hyprctl reload
+end
+
 function run_cmd
     if test "$argv[1]" = "--tokyonight-dark"
         set -U THEME "tokyonight-dark"
     else if test "$argv[1]" = "--gruvbox-light"
         set -U THEME "gruvbox-light"
     end
-    hyprctl reload
+    kitty_reload
+    hyprland_reload
 end
 
 set chosen $(run_rofi)
