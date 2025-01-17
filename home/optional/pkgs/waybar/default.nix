@@ -183,9 +183,6 @@
   };
 
   xdg.configFile = {
-    "waybar/style.css" = {
-      source = ./style.css;
-    };
     "waybar/theme/tokyonight-dark.css" = {
       source = ./theme/tokyonight-dark.css;
     };
@@ -194,4 +191,8 @@
     };
   };
 
+  ".scripts/waybar.fish" = {
+      source = builtins.toString ../../../scripts/waybar.fish;
+      executable = true;
+  };
 }
