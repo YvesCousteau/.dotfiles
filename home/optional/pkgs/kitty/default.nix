@@ -25,16 +25,22 @@
   };
 
   xdg.configFile = {
-    "kitty/light-theme.conf" = {
-      source = ./light-theme.conf;
+    "kitty/theme/gruvbox_light.conf" = {
+      source = ./theme/gruvbox-light.conf;
     };
-    "kitty/dark-theme.conf" = {
-      source = ./dark-theme.conf;
+    "kitty/theme/tokyonight-dark.conf" = {
+      source = ./theme/tokyonight-dark.conf;
     };
   };
 
-  home.file.".scripts/tmux_start.fish" = {
-    source = builtins.toString ../../../scripts/tmux_start.fish;
-    executable = true;
+  home.file = {
+    ".scripts/tmux_start.fish" = {
+      source = builtins.toString ../../../scripts/tmux_start.fish;
+      executable = true;
+    };
+    ".scripts/term.fish" = {
+      source = builtins.toString ../../../scripts/term.fish;
+      executable = true;
+    };
   };
 }

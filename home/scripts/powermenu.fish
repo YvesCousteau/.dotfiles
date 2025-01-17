@@ -36,14 +36,12 @@ end
 function run_cmd
 	set selected "$(confirm_exit)"
 	if test "$selected" = "$yes"
-        if test $1 = "--shutdown"
-			systemctl poweroff
-        else if test $1 = "--reboot"
-			systemctl reboot
-        else if test $1 = "--suspend"
-			mpc -q pause
-			amixer set Master mute
-			systemctl suspend
+        if test $argv[1] = "--shutdown"
+			poweroff
+        else if test $argv[1] = "--reboot"
+			reboot
+        else if test $argv[1] = "--suspend"
+			hyprlock
         end
 	else
 		exit 0

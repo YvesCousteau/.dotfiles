@@ -1,7 +1,7 @@
 { pkgs, lib, mergedSetup, ... }:
 let
   waybarCommand = if mergedSetup.gui.full or false then ''
-    exec-once = waybar
+    exec = $HOME/.scripts/waybar.fish
   '' else "";
   hyprpaperCommand = if mergedSetup.gui.full or false then ''
     exec-once = hyprpaper

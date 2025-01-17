@@ -1,8 +1,8 @@
 #!/usr/bin/env fish
 
 set host $hostname
-set light '󰖨 Light'
-set dark '󰤄 Dark'
+set gruvbox_light '󰖨 gruvbox'
+set tokyonight_dark '󰤄 tokyonight'
 
 function rofi_cmd
 	rofi -dmenu \
@@ -11,22 +11,22 @@ function rofi_cmd
 end
 
 function run_rofi
-	echo -e "$dark\n$light" | rofi_cmd
+	echo -e "$tokyonight_dark\n$gruvbox_light" | rofi_cmd
 end
 
 function run_cmd
-    if test "$argv[1]" = "--dark"
+    if test "$argv[1]" = "--tokyonight-dark"
         set -U THEME "tokyonight-dark"
-    else if test "$argv[1]" = "--light"
+    else if test "$argv[1]" = "--gruvbox-light"
         set -U THEME "gruvbox-light"
     end
-    pkill waybar && hyprctl dispatch exec waybar
+    hyprctl reload
 end
 
 set chosen $(run_rofi)
 switch $chosen
-case $dark
-    run_cmd --dark
-case $light
-    run_cmd --light
+case $tokyonight_dark
+    run_cmd --tokyonight-dark
+case $gruvbox_light
+    run_cmd --gruvbox-light
 end

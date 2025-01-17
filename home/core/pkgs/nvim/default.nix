@@ -20,7 +20,6 @@
       ${builtins.readFile ./plugins/bufferline.lua}
       ${builtins.readFile ./plugins/colorizer.lua}
       ${builtins.readFile ./plugins/gruvbox.lua}
-      ${builtins.readFile ./plugins/image.lua}
       ${builtins.readFile ./plugins/nvim-tree.lua}
       ${builtins.readFile ./plugins/rest-nvim.lua}
       ${builtins.readFile ./plugins/toggleterm.lua}
@@ -33,14 +32,18 @@
       luajit
       imagemagick
       postgresql
+      stylua
+      nixfmt-rfc-style
+      prettierd
+      isort
+      black
+      nodePackages.prettier
     ];
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/vim-plugin-names
     plugins = with pkgs.vimPlugins; [
       # ========================
       # misc 
       # ========================
-      image-nvim              # https://github.com/samodostal/image.nvim
-                              # show image in terminal
       toggleterm-nvim         # https://github.com/akinsho/toggleterm.nvim
                               # floating terminal
       telescope-nvim          # https://github.com/nvim-telescope/telescope.nvim
