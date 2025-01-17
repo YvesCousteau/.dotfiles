@@ -20,7 +20,7 @@ function run_cmd
     else if test "$argv[1]" = "--light"
         set -U THEME "gruvbox-light"
     end
-    hyprctl reload
+    pkill waybar && hyprctl dispatch exec waybar
 end
 
 set chosen $(run_rofi)
