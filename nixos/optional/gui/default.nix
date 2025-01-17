@@ -5,10 +5,6 @@
     ../pkgs/web/firefox
   ];
 
-  # environment.sessionVariables = {
-  #   THEME = "gruvbox-light";
-  # };
-
   services = { 
     xserver = {
       enable = true;

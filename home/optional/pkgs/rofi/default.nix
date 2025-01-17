@@ -40,8 +40,12 @@
       source = builtins.toString ../../../scripts/themesmenu.fish;
       executable = true;
     };
-    ".scripts/powermenu.sh" = {
-      source = builtins.toString ../../../scripts/powermenu.sh;
+    ".scripts/powermenu.fish" = {
+      source = builtins.toString ../../../scripts/powermenu.fish;
+      executable = true;
+    };
+    ".scripts/launchermenu.fish" = {
+      source = builtins.toString ../../../scripts/launchermenu.fish;
       executable = true;
     };
   };

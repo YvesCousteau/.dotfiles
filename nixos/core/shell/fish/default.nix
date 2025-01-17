@@ -43,7 +43,7 @@
       starship init fish | source
       fish_vi_key_bindings
 
-      # set -x THEME $THEME
+      set -U THEME gruvbox-light
 
       fzf --fish | source
     '';

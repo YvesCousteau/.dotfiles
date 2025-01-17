@@ -30,10 +30,6 @@ in
       ../pkgs/mpv 
     ];
 
-  home.sessionVariables = {
-    THEME = "gruvbox-light";
-  };
-
   xdg.configFile = {
     "hypr/hyprland.conf".source = hyprlandConf;
     "hypr/windowrule.conf".source = ./windowrule.conf;

@@ -1,24 +1,19 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
-# CMDs
-host=`hostname`
+set host $hostname
+set shutdown '󰤆 Shutdown'
+set reboot '󰃨 Reboot'
+set suspend '󰤄 Suspend'
+set yes '󰄬 Yes'
+set no '󰅖 No'
 
-# Options
-shutdown='󰤆 Shutdown'
-reboot='󰃨 Reboot'
-suspend='󰤄 Suspend'
-yes='󰄬 Yes'
-no='󰅖 No'
-
-# Rofi CMD
-rofi_cmd() {
+function rofi_cmd
 	rofi -dmenu \
 		-p "$host" \
 		-theme $HOME/.local/share/rofi/powermenu/theme/$THEME.rasi
-}
+end
 
-# Confirmation CMD
-confirm_cmd() {
+function confirm_cmd
 	rofi -theme-str 'window {location: center; anchor: center; fullscreen: false; width: 250px;}' \
 		-theme-str 'mainbox {children: [ "message", "listview" ];}' \
 		-theme-str 'listview {columns: 2; lines: 1;}' \
@@ -28,46 +23,39 @@ confirm_cmd() {
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
 		-theme $HOME/.local/share/rofi/powermenu/theme/$THEME.rasi
-}
+end
 
-# Ask for confirmation
-confirm_exit() {
+function confirm_exit
 	echo -e "$yes\n$no" | confirm_cmd
-}
+end
 
-# Pass variables to rofi dmenu
-run_rofi() {
+function run_rofi
 	echo -e "$suspend\n$reboot\n$shutdown" | rofi_cmd
-}
+end
 
-# Execute Command
-run_cmd() {
-	selected="$(confirm_exit)"
-	if [[ "$selected" == "$yes" ]]; then
-		if [[ $1 == '--shutdown' ]]; then
+function run_cmd
+	set selected "$(confirm_exit)"
+	if test "$selected" = "$yes"
+        if test $1 = "--shutdown"
 			systemctl poweroff
-		elif [[ $1 == '--reboot' ]]; then
+        else if test $1 = "--reboot"
 			systemctl reboot
-		elif [[ $1 == '--suspend' ]]; then
+        else if test $1 = "--suspend"
 			mpc -q pause
 			amixer set Master mute
 			systemctl suspend
-		fi
+        end
 	else
 		exit 0
-	fi
-}
+    end
+end
 
-# Actions
-chosen="$(run_rofi)"
-case ${chosen} in
-    $shutdown)
-		run_cmd --shutdown
-        ;;
-    $reboot)
-		run_cmd --reboot
-        ;;
-    $suspend)
-		run_cmd --suspend
-        ;;
-esac
+set chosen $(run_rofi)
+switch $chosen
+case $shutdown
+    run_cmd --shutdown
+case $reboot
+    run_cmd --reboot
+case $suspend
+    run_cmd --suspend
+end

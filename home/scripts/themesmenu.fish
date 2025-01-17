@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set host `hostname`
+set host $hostname
 set light '󰖨 Light'
 set dark '󰤄 Dark'
 
@@ -16,13 +16,14 @@ end
 
 function run_cmd
     if test "$argv[1]" = "--dark"
-        set -gx THEME "tokyonight-dark"
+        set -U THEME "tokyonight-dark"
     else if test "$argv[1]" = "--light"
-        set -gx THEME "gruvbox-light"
+        set -U THEME "gruvbox-light"
     end
+    hyprctl reload
 end
 
-set chosen "$(run_rofi)"
+set chosen $(run_rofi)
 switch $chosen
 case $dark
     run_cmd --dark
