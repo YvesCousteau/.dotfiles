@@ -186,11 +186,11 @@
     "waybar/style.css" = {
       source = ./style.css;
     };
-    "waybar/light-theme.css" = {
-      source = ./light-theme.css;
+    "waybar/theme/tokyonight-dark.css" = {
+      source = ./theme/tokyonight-dark.css;
     };
-    "waybar/dark-theme.css" = {
-      source = ./dark-theme.css;
+    "waybar/theme/gruvbox-light.css" = {
+      source = ./theme/gruvbox-light.css;
     };
   };
 
