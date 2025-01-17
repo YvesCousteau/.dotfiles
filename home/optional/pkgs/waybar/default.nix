@@ -12,9 +12,6 @@
         margin-right = 10;
         modules-left = [
           "clock#time"
-          "hyprland/workspaces"
-          "hyprland/window"
-          # "tray"
         ];
         modules-center = [
         ];
@@ -30,30 +27,6 @@
           "backlight" 
           "clock#date"
         ];
-        "hyprland/workspaces" = {
-          format = "{icon}:";
-          all-outputs = true;
-          sort-by-number = true;
-          active-only = true;
-          format-icons = {
-            "1" = "01/10";
-            "2" = "02/10";
-            "3" = "03/10";
-            "4" = "04/10";
-            "5" = "05/10";
-            "6" = "06/10";
-            "7" = "07/10";
-            "8" = "08/10";
-            "9" = "09/10";
-            "10" = "10/10";
-          };
-          disable-scroll = true;
-        };
-        "hyprland/window" = {
-          format = "{}";
-          separate-outputs = true;
-          max-length = 35;
-        };
         "cpu" = {
 		  interval = 5;
 		  tooltip = false;
@@ -153,10 +126,6 @@
 		  tooltip = false;
           interval = 2;
         };
-        "tray" = {
-          icon-size = 21;
-          spacing = 10;
-        };
         "clock#time" = {
           # timezone = "Europe/Paris";
 		  interval = 10;
@@ -183,15 +152,16 @@
   };
 
   xdg.configFile = {
-    "waybar/style.css" = {
-      source = ./style.css;
+    "waybar/theme/tokyonight-dark.css" = {
+      source = ./theme/tokyonight-dark.css;
     };
-    "waybar/light-theme.css" = {
-      source = ./light-theme.css;
-    };
-    "waybar/dark-theme.css" = {
-      source = ./dark-theme.css;
+    "waybar/theme/gruvbox-light.css" = {
+      source = ./theme/gruvbox-light.css;
     };
   };
 
+  home.file.".scripts/waybar.fish" = {
+      source = builtins.toString ../../../scripts/waybar.fish;
+      executable = true;
+  };
 }

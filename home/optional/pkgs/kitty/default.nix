@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }:{
   imports = [
     ../tmux 
   ];
@@ -14,27 +14,39 @@
       size = 12.0;
     };
     settings = {
-      shell = "${toString ./../../../scripts/tmux_start.sh}";
+      shell = "${toString ./../../../scripts/tmux_start.fish}";
       window_padding_width = 4;
     };
     keybindings = {
       "ctrl+shift+c" = "copy_to_clipboard";
       "ctrl+shift+v" = "paste_from_clipboard";
     };
-    extraConfig = builtins.readFile ./config.conf;
+    extraConfig = ''
+      italic_font auto
+      bold_font auto
+      bold_italic_font auto
+
+      include ./theme.conf
+    '';
   };
 
   xdg.configFile = {
-    "kitty/light-theme.conf" = {
-      source = ./light-theme.conf;
+    "kitty/theme/gruvbox-light.conf" = {
+      source = ./theme/gruvbox-light.conf;
     };
-    "kitty/dark-theme.conf" = {
-      source = ./dark-theme.conf;
+    "kitty/theme/tokyonight-dark.conf" = {
+      source = ./theme/tokyonight-dark.conf;
     };
   };
 
-  home.file.".scripts/tmux_start.sh" = {
-    source = builtins.toString ../../../scripts/tmux_start.sh;
-    executable = true;
+  home.file = {
+    ".scripts/tmux_start.fish" = {
+      source = builtins.toString ../../../scripts/tmux_start.fish;
+      executable = true;
+    };
+    ".scripts/term.fish" = {
+      source = builtins.toString ../../../scripts/term.fish;
+      executable = true;
+    };
   };
 }

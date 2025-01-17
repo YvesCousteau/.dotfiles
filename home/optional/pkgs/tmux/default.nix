@@ -1,38 +1,61 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let 
+  tokyonight = pkgs.tmuxPlugins.mkTmuxPlugin {
+    pluginName = "tokyonight";
+    version = "latest";
+    src = pkgs.fetchFromGitHub {
+      owner = "fabioluciano";
+      repo = "tmux-tokyo-night";
+      rev = "main";
+      sha256 = "sha256-9nDgiJptXIP+Hn9UY+QFMgoghw4HfTJ5TZq0f9KVOFg=";
+    };
+  };
+in {
   programs.tmux = {
     enable = true;
     shell = "${pkgs.fish}/bin/fish";
+    newSession = true;
     mouse = true;
     plugins = with pkgs.tmuxPlugins; [
+      # https://github.com/tmux-plugins/tmux-cpu
       cpu
+      # https://github.com/tmux-plugins/tmux-resurrect
       {
         plugin = resurrect;
-        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+        # extraConfig = "set -g @resurrect-strategy-nvim 'session'";
       }
+      # https://github.com/tmux-plugins/tmux-continuum
       {
         plugin = continuum;
         extraConfig = ''
           set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '60' # minutes
+          set -g @continuum-save-interval '20'
         '';
       }
-      gruvbox
+      # https://github.com/laktak/extrakto
+      extrakto
+      # https://github.com/tmux-plugins/tmux-fpp
+      fpp
+      # https://github.com/roosta/tmux-fuzzback
+      fuzzback
+      # https://github.com/tmux-plugins/tmux-sidebar
+      sidebar
+      # https://github.com/alexwforsythe/tmux-which-key
+      # tmux-which-key
+      # https://github.com/fabioluciano/tmux-tokyo-night
+      tokyonight
+      # {
+      #   plugin = tokyonight;
+      #   extraConfig = ''
+      #     set -g @theme_variation 'night'
+      #     set -g @theme_left_separator ''
+      #     set -g @theme_right_separator ''
+      #     set -g @theme_plugins 'datetime,weather,playerctl,yay'
+      #   '';
+      # }
+      # https://github.com/egel/tmux-gruvbox
       {
-        plugin = pkgs.tmuxPlugins.mkTmuxPlugin {
-          pluginName = "tmux-tokyo-night";
-          version = "1.9.0";
-          src = pkgs.fetchFromGitHub {
-            owner = "fabioluciano";
-            repo = "tmux-tokyo-night";
-            rev = "main";
-            sha256 = "sha256-9nDgiJptXIP+Hn9UY+QFMgoghw4HfTJ5TZq0f9KVOFg=";
-          };
-          postInstall = ''
-            mv $out/share/tmux-plugins/tmux-tokyo-night/tmux-tokyo-night.tmux $out/share/tmux-plugins/tmux-tokyo-night/tmux_tokyo_night.tmux
-          '';
-        };
+        plugin =  gruvbox;
         extraConfig = ''
-          set -g @theme_variation 'night'
         '';
       }
     ];

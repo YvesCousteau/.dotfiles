@@ -41,8 +41,11 @@
     };
     interactiveShellInit = ''
       starship init fish | source
-      fzf --fish | source
       fish_vi_key_bindings
+
+      set -U THEME gruvbox-light
+
+      fzf --fish | source
     '';
   };
 
