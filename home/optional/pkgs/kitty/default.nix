@@ -14,7 +14,7 @@
       size = 12.0;
     };
     settings = {
-      shell = "${toString ./../../../scripts/tmux_start.fish}";
+      shell = "${toString ./../../../scripts/tmux.fish}";
       window_padding_width = 4;
     };
     keybindings = {
@@ -40,8 +40,8 @@
   };
 
   home.file = {
-    ".scripts/tmux_start.fish" = {
-      source = builtins.toString ../../../scripts/tmux_start.fish;
+    ".scripts/tmux.fish" = {
+      source = builtins.toString ../../../scripts/tmux.fish;
       executable = true;
     };
     ".scripts/term.fish" = {
