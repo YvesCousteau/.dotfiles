@@ -14,7 +14,7 @@ set file_count $(find "$WALLPAPER_DIR"/ -type f | wc -l)
 echo "Number of files in wallpaper directory: $file_count"
 
 # Check if hyprpaper is running
-if test ! pgrep -x "hyprpaper" > /dev/null
+if not pgrep -x "hyprpaper" > /dev/null
     echo "Starting hyprpaper..."
     hyprpaper &
     sleep 2  # Give hyprpaper time to start
@@ -33,7 +33,7 @@ end
 echo "Setting new wallpapers..."
 for display in $(hyprctl monitors | grep "Monitor" | cut -d " " -f 2)
     echo "Setting wallpaper for display: $display"
-    wallpaper="$(find "$WALLPAPER_DIR"/ -type f | shuf -n 1)"
+    set wallpaper "$(find "$WALLPAPER_DIR"/ -type f | shuf -n 1)"
     echo "Selected wallpaper: $wallpaper on $display"
     if test -f "$wallpaper"
         echo "Preloading wallpaper..."
