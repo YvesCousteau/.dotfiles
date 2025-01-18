@@ -26,10 +26,12 @@ end
 function run_cmd
     if test "$argv[1]" = "--tokyonight-dark"
         set -U THEME "tokyonight-dark"
-        $(nix-build -E 'let pkgs = import <nixpkgs> {}; tokyonight = pkgs.tmuxPlugins.mkTmuxPlugin { pluginName = "tokyonight"; version = "latest"; src = pkgs.fetchFromGitHub { owner = "fabioluciano"; repo = "tmux-tokyo-night"; rev = "main"; sha256 = "sha256-9nDgiJptXIP+Hn9UY+QFMgoghw4HfTJ5TZq0f9KVOFg="; }; }; in tokyonight')/share/tmux-plugins/gruvbox/gruvbox-tpm.tmux
+        set tmux_path (nix-build -E 'let pkgs = import <nixpkgs> {}; tokyonight = pkgs.tmuxPlugins.mkTmuxPlugin { pluginName = "tokyonight"; version = "latest"; src = pkgs.fetchFromGitHub { owner = "fabioluciano"; repo = "tmux-tokyo-night"; rev = "main"; sha256 = "sha256-9nDgiJptXIP+Hn9UY+QFMgoghw4HfTJ5TZq0f9KVOFg="; }; }; in tokyonight')
+        $tmux_path/share/tmux-plugins/tokyonight/tmux-tokyo-night.tmux
     else if test "$argv[1]" = "--gruvbox-light"
         set -U THEME "gruvbox-light"
-        $(nix eval nixpkgs#tmuxPlugins.gruvbox.outPath)/share/tmux-plugins/gruvbox/gruvbox-tpm.tmux
+        set tmux_path $(nix eval --raw nixpkgs#tmuxPlugins.gruvbox.outPath)
+        $tmux_path/share/tmux-plugins/gruvbox/gruvbox-tpm.tmux
     end
     kitty_reload
     hyprland_reload
