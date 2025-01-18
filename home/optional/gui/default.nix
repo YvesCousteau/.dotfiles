@@ -48,12 +48,8 @@ in
   };
 
   home.file = {
-    ".scripts/wallpapers-randomizer.sh" = {
-      source = builtins.toString ../../scripts/wallpapers-randomizer.sh;
-      executable = true;
-    };
-    ".scripts/wallpapers-black.sh" = {
-      source = builtins.toString ../../scripts/wallpapers-black.sh;
+    ".scripts/wallpapers-randomizer.fish" = {
+      source = builtins.toString ../../scripts/wallpapers-randomizer.fish;
       executable = true;
     };
     ".wallpapers" = {
