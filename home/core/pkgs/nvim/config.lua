@@ -4,10 +4,6 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 -- Copy/Past Clipboard
 vim.opt.clipboard = 'unnamedplus'
 
--- Set colorscheme
-vim.o.background = "light"
-vim.cmd("colorscheme gruvbox")
-
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

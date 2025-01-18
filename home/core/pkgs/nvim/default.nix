@@ -28,17 +28,6 @@
       ${builtins.readFile ./plugins/conform.lua}
       ${builtins.readFile ./keybindings.lua}
     '';
-    extraPackages = with pkgs; [
-      luajit
-      imagemagick
-      postgresql
-      stylua
-      nixfmt-rfc-style
-      prettierd
-      isort
-      black
-      nodePackages.prettier
-    ];
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/vim-plugin-names
     plugins = with pkgs.vimPlugins; [
       # ========================
@@ -163,8 +152,16 @@
       })
     ];
   };
-
   home.packages = with pkgs; [
+    luajit
+    imagemagick
+    postgresql
+    stylua
+    nixfmt-rfc-style
+    prettierd
+    isort
+    black
+    nodePackages.prettier
     ripgrep
   ];
 }
