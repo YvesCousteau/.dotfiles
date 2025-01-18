@@ -19,6 +19,10 @@ function kitty_reload
     kill -SIGUSR1 $(pgrep kitty)
 end
 
+function wallpaper_reload 
+    $HOME/.scripts/wallpapers-randomizer.fish
+end
+
 function hyprland_reload 
     hyprctl reload
 end
@@ -42,6 +46,7 @@ function run_cmd
     end
     kitty_reload
     hyprland_reload
+    wallpaper_reload
 end
 
 set chosen $(run_rofi)
