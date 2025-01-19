@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 function kitty_reload 
     ln -sf ~/.config/kitty/theme/$THEME.conf ~/.config/kitty/theme.conf
     kill -SIGUSR1 $(pgrep kitty)
