@@ -48,6 +48,10 @@ in
   };
 
   home.file = {
+    ".scripts/reloadtheme.fish" = {
+      source = builtins.toString ../../scripts/reloadtheme.fish;
+      executable = true;
+    };
     ".scripts/wallpapers-randomizer.fish" = {
       source = builtins.toString ../../scripts/wallpapers-randomizer.fish;
       executable = true;
