@@ -57,9 +57,5 @@
       source = builtins.toString ../../../scripts/menu_shortcuts.fish;
       executable = true;
     };
-    ".scripts/menu_perf.fish" = {
-      source = builtins.toString ../../../scripts/menu_perf.fish;
-      executable = true;
-    };
   };
 }

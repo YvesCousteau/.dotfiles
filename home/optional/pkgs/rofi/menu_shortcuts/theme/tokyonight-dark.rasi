@@ -14,14 +14,6 @@ configuration {
 
 /*****----- Main Window -----*****/
 window {
-    transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    fullscreen:                  false;
-    width:                       600px;
-    x-offset:                    0px;
-    y-offset:                    0px;
-
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
@@ -42,9 +34,10 @@ mainbox {
     border-radius:               0px;
     border-color:                @foreground;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "message", "listview" ];
 }
 
+/*****----- Message -----*****/
 message {
     enabled:                     true;
     margin:                      0px;
@@ -52,7 +45,7 @@ message {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
-    background-color:            @active;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 textbox {
@@ -77,7 +70,7 @@ error-message {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       6;
+    lines:                       2;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;

@@ -21,4 +21,4 @@ end
 
 hyprland_binds_formating | rofi -dmenu \
     -mesg "MOD:                      ACTION:" \
-    -theme $HOME/.local/share/rofi/menu_shortcuts/theme/gruvbox-light.rasi
+    -theme $HOME/.local/share/rofi/menu_shortcuts/theme/$THEME.rasi

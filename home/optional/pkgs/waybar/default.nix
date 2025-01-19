@@ -5,11 +5,11 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 40;
-        margin-top = 10;
-        margin-bottom = 4;
-        margin-left = 10;
-        margin-right = 10;
+        height = 30;
+        margin-top = 5;
+        margin-bottom = 0;
+        margin-left = 5;
+        margin-right = 5;
         modules-left = [
           "clock#time"
         ];
