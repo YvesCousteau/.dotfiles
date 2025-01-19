@@ -2,9 +2,8 @@
 {
   programs.rofi = {
     enable = true;
-    cycle = true;
-    location = "center";
-    pass = { };
+    # cycle = true;
+    # pass = { };
     plugins = with pkgs; [
       rofi-calc
       rofi-emoji
