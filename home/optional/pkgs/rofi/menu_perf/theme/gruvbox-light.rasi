@@ -5,11 +5,11 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    background:     #1a1b26;
-    foreground:     #a9b1d6;
-    selected:       #24283b;
-    active:         #7dcfff;
-    urgent:         #f7768e;
+    background:     #fbf1c7;
+    foreground:     #3c3836;
+    selected:       #ebdbb2;
+    active:         #458588;
+    urgent:         #cc241d;
 }
 
 /*****----- Main Window -----*****/
@@ -48,7 +48,7 @@ mainbox {
 }
 
 /*****----- Title -----*****/
-title {
+tile {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;

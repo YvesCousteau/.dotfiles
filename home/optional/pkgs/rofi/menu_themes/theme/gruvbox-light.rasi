@@ -44,11 +44,11 @@ mainbox {
     border-radius:               0px;
     border-color:                @foreground;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "title", "message", "listview" ];
 }
 
-/*****----- Inputbar -----*****/
-inputbar {
+/*****----- Title -----*****/
+title {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;

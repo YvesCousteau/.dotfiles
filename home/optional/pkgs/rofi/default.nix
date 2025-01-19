@@ -35,6 +35,12 @@
     ".local/share/rofi/menu_themes/theme/tokyonight-dark.rasi" = {
       source = ./menu_themes/theme/tokyonight-dark.rasi;
     };
+    ".local/share/rofi/menu_shortcuts/theme/gruvbox-light.rasi" = {
+      source = ./menu_shortcuts/theme/gruvbox-light.rasi;
+    };
+    ".local/share/rofi/menu_shortcuts/theme/tokyonight-dark.rasi" = {
+      source = ./menu_shortcuts/theme/tokyonight-dark.rasi;
+    };
 
     ".scripts/menu_themes.fish" = {
       source = builtins.toString ../../../scripts/menu_themes.fish;
@@ -46,6 +52,10 @@
     };
     ".scripts/menu_launcher.fish" = {
       source = builtins.toString ../../../scripts/menu_launcher.fish;
+      executable = true;
+    };
+    ".scripts/menu_shortcuts.fish" = {
+      source = builtins.toString ../../../scripts/menu_shortcuts.fish;
       executable = true;
     };
   };
