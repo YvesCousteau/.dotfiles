@@ -77,16 +77,23 @@
 
 /* =============================== */
 /* Clock */
-#clock {
+#clock.date {
     font-weight: normal;
+    border: 2px solid @fg;
     padding-left: 10px;
     padding-right: 10px;
     background: @bg;
-}
-#clock.date {
-    font-weight: normal;
+    border-radius: 4px;
+    margin-right: 5px;
 }
 #clock.time {
+    font-weight: normal;
+    border: 2px solid @fg;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: @bg;
+    border-radius: 4px;
+    margin-right: 5px;
 }
 
 /* =============================== */
