@@ -4,7 +4,7 @@ function kitty_reload
 end
 
 function wallpaper_reload 
-    $HOME/.scripts/wallpapers-randomizer.fish
+    $HOME/.scripts/wallpapers_rand.fish
 end
 
 function hyprland_reload 

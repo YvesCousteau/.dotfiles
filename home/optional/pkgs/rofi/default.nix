@@ -17,35 +17,35 @@
   };
 
   home.file = {
-    ".local/share/rofi/launcher/theme/gruvbox-light.rasi" = {
-      source = ./launcher/theme/gruvbox-light.rasi;
+    ".local/share/rofi/menu_launcher/theme/gruvbox-light.rasi" = {
+      source = ./menu_launcher/theme/gruvbox-light.rasi;
     };
-    ".local/share/rofi/launcher/theme/tokyonight-dark.rasi" = {
-      source = ./launcher/theme/tokyonight-dark.rasi;
+    ".local/share/rofi/menu_launcher/theme/tokyonight-dark.rasi" = {
+      source = ./menu_launcher/theme/tokyonight-dark.rasi;
     };
-    ".local/share/rofi/powermenu/theme/gruvbox-light.rasi" = {
-      source = ./powermenu/theme/gruvbox-light.rasi;
+    ".local/share/rofi/menu_power/theme/gruvbox-light.rasi" = {
+      source = ./menu_power/theme/gruvbox-light.rasi;
     };
-    ".local/share/rofi/powermenu/theme/tokyonight-dark.rasi" = {
-      source = ./powermenu/theme/tokyonight-dark.rasi;
+    ".local/share/rofi/menu_power/theme/tokyonight-dark.rasi" = {
+      source = ./menu_power/theme/tokyonight-dark.rasi;
     };
-    ".local/share/rofi/themesmenu/theme/gruvbox-light.rasi" = {
-      source = ./themesmenu/theme/gruvbox-light.rasi;
+    ".local/share/rofi/menu_themes/theme/gruvbox-light.rasi" = {
+      source = ./menu_themes/theme/gruvbox-light.rasi;
     };
-    ".local/share/rofi/themesmenu/theme/tokyonight-dark.rasi" = {
-      source = ./themesmenu/theme/tokyonight-dark.rasi;
+    ".local/share/rofi/menu_themes/theme/tokyonight-dark.rasi" = {
+      source = ./menu_themes/theme/tokyonight-dark.rasi;
     };
 
-    ".scripts/themesmenu.fish" = {
-      source = builtins.toString ../../../scripts/themesmenu.fish;
+    ".scripts/menu_themes.fish" = {
+      source = builtins.toString ../../../scripts/menu_themes.fish;
       executable = true;
     };
-    ".scripts/powermenu.fish" = {
-      source = builtins.toString ../../../scripts/powermenu.fish;
+    ".scripts/menu_power.fish" = {
+      source = builtins.toString ../../../scripts/menu_power.fish;
       executable = true;
     };
-    ".scripts/launchermenu.fish" = {
-      source = builtins.toString ../../../scripts/launchermenu.fish;
+    ".scripts/menu_launcher.fish" = {
+      source = builtins.toString ../../../scripts/menu_launcher.fish;
       executable = true;
     };
   };

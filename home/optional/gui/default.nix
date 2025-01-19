@@ -5,10 +5,9 @@ let
   '' else "";
   hyprpaperCommand = if mergedSetup.gui.full or false then ''
     exec-once = hyprpaper
-    exec-once = while true; do $HOME/.scripts/wallpapers-randomizer.sh; sleep 900; done
+    exec-once = while true; do $HOME/.scripts/wallpapers_rand.sh; sleep 900; done
   '' else ''
     exec-once = hyprpaper
-    exec-once = $HOME/.scripts/wallpapers-black.sh
   '';
   hyprlandConf = pkgs.substituteAll {
     src = ./hyprland.conf;
@@ -48,12 +47,12 @@ in
   };
 
   home.file = {
-    ".scripts/reloadtheme.fish" = {
-      source = builtins.toString ../../scripts/reloadtheme.fish;
+    ".scripts/theme_reloader.fish" = {
+      source = builtins.toString ../../scripts/theme_reloader.fish;
       executable = true;
     };
-    ".scripts/wallpapers-randomizer.fish" = {
-      source = builtins.toString ../../scripts/wallpapers-randomizer.fish;
+    ".scripts/wallpapers_rand.fish" = {
+      source = builtins.toString ../../scripts/wallpapers_rand.fish;
       executable = true;
     };
     ".wallpapers" = {

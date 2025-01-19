@@ -7,7 +7,7 @@ set tokyonight_dark '󰤄 tokyonight'
 function rofi_cmd
 	rofi -dmenu \
 		-p "$host" \
-		-theme $HOME/.local/share/rofi/themesmenu/theme/$THEME.rasi
+		-theme $HOME/.local/share/rofi/menu_themes/theme/$THEME.rasi
 end
 
 function run_rofi
@@ -17,7 +17,7 @@ end
 set chosen $(run_rofi)
 switch $chosen
 case $tokyonight_dark
-    $HOME/.scripts/reloadtheme.fish --tokyonight-dark
+    $HOME/.scripts/theme_reloader.fish --tokyonight-dark
 case $gruvbox_light
-    $HOME/.scripts/reloadtheme.fish --gruvbox-light
+    $HOME/.scripts/theme_reloader.fish --gruvbox-light
 end
