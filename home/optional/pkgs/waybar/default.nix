@@ -11,21 +11,21 @@
         margin-left = 5;
         margin-right = 5;
         modules-left = [
+          "clock#date"
           "clock#time"
+          "network" 
         ];
         modules-center = [
+          "custom/spotify"
         ];
         modules-right = [
-          "custom/spotify"
-          "network" 
+          "battery"
+          "backlight" 
           "pulseaudio"
           "cpu"
           "memory"
           "temperature"
           "disk"
-          "battery"
-          "backlight" 
-          "clock#date"
         ];
         "cpu" = {
 		  interval = 5;

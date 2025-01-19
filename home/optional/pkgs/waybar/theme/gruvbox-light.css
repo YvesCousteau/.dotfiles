@@ -50,7 +50,6 @@
 #memory,
 #disk,
 #temperature {
-    color: @gray;
     font-weight: normal;
     border: 2px solid @fg;
     border-radius: 4px;
@@ -67,7 +66,6 @@
 #pulseaudio,
 #battery,
 #backlight {
-    color: @purple;
     font-weight: normal;
     border: 2px solid @fg;
     border-radius: 4px;
@@ -84,18 +82,11 @@
     padding-left: 10px;
     padding-right: 10px;
     background: @bg;
-    border-radius: 4px;
 }
 #clock.date {
     font-weight: normal;
-    padding-right: 10px;
-    border: 2px solid @fg;
-    border-radius: 4px;
 }
 #clock.time {
-    border: 2px solid @fg;
-    border-radius: 4px;
-    margin-right: 0px;
 }
 
 /* =============================== */
