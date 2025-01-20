@@ -31,6 +31,7 @@ in
 
   xdg.configFile = {
     "hypr/hyprland.conf".source = hyprlandConf;
+    "hypr/theme".source = ./theme;
     "hypr/windowrule.conf".source = ./windowrule.conf;
     "hypr/keybindings.conf".source = ./keybindings.conf;
     "hypr/hyprpaper.conf".source = ./hyprpaper.conf;
