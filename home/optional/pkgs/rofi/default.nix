@@ -19,20 +19,20 @@
   xdg.configFile."rofi/theme".source = ./theme;
 
   home.file = {
-    ".scripts/menu_themes.fish" = {
-      source = builtins.toString ../../../scripts/menu_themes.fish;
+    ".scripts/rofi/menu_themes.fish" = {
+      source = builtins.toString ../../../scripts/rofi/menu_themes.fish;
       executable = true;
     };
-    ".scripts/menu_power.fish" = {
-      source = builtins.toString ../../../scripts/menu_power.fish;
+    ".scripts/rofi/menu_power.fish" = {
+      source = builtins.toString ../../../scripts/rofi/menu_power.fish;
       executable = true;
     };
-    ".scripts/menu_launcher.fish" = {
-      source = builtins.toString ../../../scripts/menu_launcher.fish;
+    ".scripts/rofi/menu_launcher.fish" = {
+      source = builtins.toString ../../../scripts/rofi/menu_launcher.fish;
       executable = true;
     };
-    ".scripts/menu_shortcuts.fish" = {
-      source = builtins.toString ../../../scripts/menu_shortcuts.fish;
+    ".scripts/rofi/menu_shortcuts.fish" = {
+      source = builtins.toString ../../../scripts/rofi/menu_shortcuts.fish;
       executable = true;
     };
   };

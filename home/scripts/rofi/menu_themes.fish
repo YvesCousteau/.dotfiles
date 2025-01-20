@@ -17,7 +17,7 @@ end
 set chosen $(run_rofi)
 switch $chosen
 case $tokyonight_dark
-    $HOME/.scripts/theme_reloader.fish --tokyonight-dark
+    $HOME/.scripts/misc/theme_reloader.fish --tokyonight-dark
 case $gruvbox_light
-    $HOME/.scripts/theme_reloader.fish --gruvbox-light
+    $HOME/.scripts/misc/theme_reloader.fish --gruvbox-light
 end

@@ -4,10 +4,10 @@ let
     exec = $HOME/.scripts/waybar.fish
   '' else "";
   hyprpaperCommand = if mergedSetup.gui.full or false then ''
-    exec-once = hyprpaper
-    exec-once = while true; do $HOME/.scripts/wallpapers_rand.sh; sleep 900; done
+    exec = hyprpaper
+    exec = $HOME/.scripts/misc/wallpapers_rand.sh
   '' else ''
-    exec-once = hyprpaper
+    exec = hyprpaper
   '';
   hyprlandConf = pkgs.substituteAll {
     src = ./hyprland.conf;
@@ -31,7 +31,6 @@ in
 
   xdg.configFile = {
     "hypr/hyprland.conf".source = hyprlandConf;
-    "hypr/theme".source = ./theme;
     "hypr/windowrule.conf".source = ./windowrule.conf;
     "hypr/keybindings.conf".source = ./keybindings.conf;
     "hypr/hyprpaper.conf".source = ./hyprpaper.conf;
@@ -48,12 +47,12 @@ in
   };
 
   home.file = {
-    ".scripts/theme_reloader.fish" = {
-      source = builtins.toString ../../scripts/theme_reloader.fish;
+    ".scripts/misc/theme_reloader.fish" = {
+      source = builtins.toString ../../scripts/misc/theme_reloader.fish;
       executable = true;
     };
-    ".scripts/wallpapers_rand.fish" = {
-      source = builtins.toString ../../scripts/wallpapers_rand.fish;
+    ".scripts/misc/wallpapers_rand.fish" = {
+      source = builtins.toString ../../scripts/misc/wallpapers_rand.fish;
       executable = true;
     };
     ".wallpapers" = {
