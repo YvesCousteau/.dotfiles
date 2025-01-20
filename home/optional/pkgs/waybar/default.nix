@@ -151,14 +151,7 @@
     };
   };
 
-  xdg.configFile = {
-    "waybar/theme/tokyonight-dark.css" = {
-      source = ./theme/tokyonight-dark.css;
-    };
-    "waybar/theme/gruvbox-light.css" = {
-      source = ./theme/gruvbox-light.css;
-    };
-  };
+  xdg.configFile."waybar/theme".source = ./theme;
 
   home.file.".scripts/waybar.fish" = {
       source = builtins.toString ../../../scripts/waybar.fish;

@@ -1,3 +1,3 @@
 #!/usr/bin/env fish
 
-rofi -show drun -theme $HOME/.local/share/rofi/menu_launcher/theme/$THEME.rasi
+rofi -show drun -theme $HOME/.config/rofi/theme/menu_launcher/$THEME.rasi

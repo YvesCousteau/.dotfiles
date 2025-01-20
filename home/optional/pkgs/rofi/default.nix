@@ -16,32 +16,9 @@
     font = "FiraCode Nerd Font 14";
   };
 
-  home.file = {
-    ".local/share/rofi/menu_launcher/theme/gruvbox-light.rasi" = {
-      source = ./menu_launcher/theme/gruvbox-light.rasi;
-    };
-    ".local/share/rofi/menu_launcher/theme/tokyonight-dark.rasi" = {
-      source = ./menu_launcher/theme/tokyonight-dark.rasi;
-    };
-    ".local/share/rofi/menu_power/theme/gruvbox-light.rasi" = {
-      source = ./menu_power/theme/gruvbox-light.rasi;
-    };
-    ".local/share/rofi/menu_power/theme/tokyonight-dark.rasi" = {
-      source = ./menu_power/theme/tokyonight-dark.rasi;
-    };
-    ".local/share/rofi/menu_themes/theme/gruvbox-light.rasi" = {
-      source = ./menu_themes/theme/gruvbox-light.rasi;
-    };
-    ".local/share/rofi/menu_themes/theme/tokyonight-dark.rasi" = {
-      source = ./menu_themes/theme/tokyonight-dark.rasi;
-    };
-    ".local/share/rofi/menu_shortcuts/theme/gruvbox-light.rasi" = {
-      source = ./menu_shortcuts/theme/gruvbox-light.rasi;
-    };
-    ".local/share/rofi/menu_shortcuts/theme/tokyonight-dark.rasi" = {
-      source = ./menu_shortcuts/theme/tokyonight-dark.rasi;
-    };
+  xdg.configFile."rofi/theme".source = ./theme;
 
+  home.file = {
     ".scripts/menu_themes.fish" = {
       source = builtins.toString ../../../scripts/menu_themes.fish;
       executable = true;
