@@ -53,7 +53,7 @@ message {
     border-radius:               4px;
     border-color:                @selected;
     background-color:            @active;
-    text-color:                  @foreground;
+    text-color:                  @background;
 }
 textbox {
     background-color:            inherit;

@@ -47,6 +47,10 @@ in
   };
 
   home.file = {
+    ".scripts/misc/loading_notif.fish" = {
+      source = builtins.toString ../../scripts/misc/loading_notif.fish;
+      executable = true;
+    };
     ".scripts/misc/theme_reloader.fish" = {
       source = builtins.toString ../../scripts/misc/theme_reloader.fish;
       executable = true;
