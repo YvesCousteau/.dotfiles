@@ -13,7 +13,7 @@
       hide-scrollbar = true;
       show-icons = true;
     };
-    font = "FiraCode Nerd Font 14";
+    font = "FiraCode Nerd Font 12";
   };
 
   xdg.configFile."rofi/theme".source = ./theme;

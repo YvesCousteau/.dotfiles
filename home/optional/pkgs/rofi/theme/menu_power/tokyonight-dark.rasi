@@ -18,18 +18,18 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       400px;
+    width:                       300px;
     x-offset:                    0px;
     y-offset:                    0px;
 
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @foreground;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            transparent;
 }
 
 /*****----- Main Box -----*****/
@@ -41,7 +41,7 @@ mainbox {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @urgent;
-    background-color:            transparent;
+    background-color:            @background;
     children:                    [ "inputbar", "message", "listview" ];
 }
 
@@ -64,14 +64,14 @@ textbox-prompt-colon {
     expand:                      false;
     str:                         "";
     padding:                     10px 20px 10px 16px;
-    border-radius:               0px;
+    border-radius:               4px;
     background-color:            @urgent;
     text-color:                  @background;
 }
 prompt {
     enabled:                     true;
     padding:                     10px 14px;
-    border-radius:               0px;
+    border-radius:               4px;
     background-color:            @active;
     text-color:                  @background;
 }
@@ -92,6 +92,7 @@ textbox {
     text-color:                  inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
+    border-radius:               0px;
     placeholder-color:           @foreground;
     blink:                       true;
     markup:                      true;
@@ -136,7 +137,7 @@ element {
     margin:                      0px;
     padding:                     10px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               4px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
