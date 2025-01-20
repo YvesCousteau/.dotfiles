@@ -5,7 +5,7 @@ let
   '' else "";
   hyprpaperCommand = if mergedSetup.gui.full or false then ''
     exec = hyprpaper
-    exec = $HOME/.scripts/misc/wallpapers_rand.sh
+    exec = $HOME/.scripts/misc/wallpapers_rand.fish
   '' else ''
     exec = hyprpaper
   '';

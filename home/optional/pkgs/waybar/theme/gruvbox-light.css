@@ -56,7 +56,7 @@
     padding-left: 10px;
     padding-right: 10px;
     background: @bg;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 /* =============================== */
@@ -72,7 +72,7 @@
     padding-left: 10px;
     padding-right: 10px;
     background: @bg;
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 /* =============================== */

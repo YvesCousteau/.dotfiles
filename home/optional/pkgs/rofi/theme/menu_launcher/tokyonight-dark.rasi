@@ -8,11 +8,11 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    background:     #1a1b26;
-    foreground:     #a9b1d6;
-    selected:       #24283b;
-    active:         #7dcfff;
-    urgent:         #f7768e;
+    background:     #1a1b26ff;
+    foreground:     #a9b1d6ff;
+    selected:       #24283bff;
+    active:         #7dcfffff;
+    urgent:         #f7768eff;
 }
 
 /*****----- Main Window -----*****/
@@ -20,7 +20,7 @@ window {
     transparency:                "real";
     anchor:                      center;
     fullscreen:                  false;
-    width:                       750px;
+    width:                       600px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -29,9 +29,8 @@ window {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background;
-    cursor:                      "default";
+    border-color:                transparent;
+    background-color:            transparent;
 }
 
 /*****----- Main Box -----*****/
@@ -40,8 +39,8 @@ mainbox {
     spacing:                     0px;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               4px;
+    border:                      2px solid;
+    border-radius:               0px;
     border-color:                @foreground;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
@@ -51,11 +50,7 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     10px;
-    margin:                      0px;
     padding:                     15px;
-    border:                      0px solid;
-    border-radius:               4px;
-    border-color:                @selected;
     background-color:            @selected;
     text-color:                  @foreground;
     children:                    [ "prompt", "entry" ];
@@ -85,7 +80,7 @@ entry {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     5;
+    columns:                     4;
     lines:                       3;
     cycle:                       true;
     dynamic:                     true;
@@ -96,14 +91,9 @@ listview {
     fixed-columns:               true;
     
     spacing:                     5px;
-    margin:                      0px;
     padding:                     10px;
-    border:                      0px solid;
-    border-radius:               4px;
-    border-color:                @foreground;
-    background-color:            transparent;
+    background-color:            @background;
     text-color:                  @foreground;
-    cursor:                      "default";
 }
 
 /*****----- Elements -----*****/
@@ -111,14 +101,12 @@ element {
     enabled:                     true;
     spacing:                     15px;
     margin:                      0px;
-    padding:                     20px 10px;
-    border:                      0px solid;
+    padding:                     10px 10px;
     border-radius:               4px;
     border-color:                @selected;
-    background-color:            transparent;
+    background-color:            @background;
     text-color:                  @foreground;
     orientation:                 vertical;
-    cursor:                      pointer;
 }
 element normal.normal {
     background-color:            @background;
@@ -131,7 +119,7 @@ element selected.normal {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        64px;
+    size:                        32px;
     cursor:                      inherit;
 }
 element-text {
@@ -142,21 +130,3 @@ element-text {
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
-
-/*****----- Message -----*****/
-error-message {
-    padding:                     15px;
-    border:                      2px solid;
-    border-radius:               4px;
-    border-color:                @selected;
-    background-color:            @background;
-    text-color:                  @foreground;
-}
-textbox {
-    background-color:            @background;
-    text-color:                  @foreground;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
-    highlight:                   none;
-}
-
