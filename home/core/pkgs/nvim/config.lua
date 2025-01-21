@@ -11,21 +11,20 @@ vim.g.loaded_netrwPlugin = 1
 -- Enable 24-bit color
 vim.opt.termguicolors = true
 
--- reloader
-function _G.ReloadConfig()
-    for name,_ in pairs(package.loaded) do
-        if name:match('^user') then
-            package.loaded[name] = nil
-        end
-    end
-    dofile(vim.env.HOME .. "/.config/nvim/init.lua")
-    vim.notify("Neovim configuration reloaded!", vim.log.levels.INFO)
-end
-
 local function run_script_on_start()
-  vim.fn.system(vim.env.HOME .. "/.script/nvim.fish")  -- Replace "your-script.sh" with the actual script you want to run
+    local result = vim.fn.system(vim.env.HOME .. "/.scripts/nvim.fish")
+    if vim.v.shell_error ~= 0 then
+        require("notify")("Script execution failed: " .. result, "error")
+    else
+        require("notify")("Script executed successfully: " .. result, "info")
+    end
+    require("notify")("Neovim start!", "info")
 end
 
 vim.api.nvim_create_autocmd("VimEnter", {
-  callback = run_script_on_start
+    callback = run_script_on_start
+})
+
+require("notify").setup({
+    background_colour = "#000000",
 })

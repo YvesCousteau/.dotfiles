@@ -14,7 +14,7 @@ function hyprland_reload
     hyprctl reload
 end
 
-function nvmim_reload 
+function nvim_reload 
     $HOME/.scripts/nvim.fish
 end
 
