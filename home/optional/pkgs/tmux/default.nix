@@ -54,4 +54,9 @@ in {
       ${builtins.readFile ./keybindings.conf}
     '';
   };
+
+  home.file.".scripts/tmux_reloader.fish" = {
+      source = builtins.toString ../../../scripts/tmux_reloader.fish;
+      executable = true;
+  };
 }
