@@ -7,4 +7,4 @@ else if test "$THEME" = "gruvbox-light"
     set tmux_path $(nix eval --raw nixpkgs#tmuxPlugins.gruvbox.outPath)
     $tmux_path/share/tmux-plugins/gruvbox/gruvbox-tpm.tmux 2&> /dev/null
 end
-echo "tmux load: $THEME"
+tmux display-message "Post-restore commands completed"

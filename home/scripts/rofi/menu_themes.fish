@@ -7,7 +7,7 @@ set tokyonight_dark '󰤄 tokyonight'
 function rofi_cmd
 	rofi -dmenu \
 		-p "$host" \
-		-theme $HOME/.config/rofi/theme/menu_themes/$THEME.rasi
+		-theme $HOME/.config/rofi/theme/menu_themes/theme.rasi
 end
 
 function run_rofi

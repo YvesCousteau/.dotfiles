@@ -19,7 +19,14 @@ function nvim_reload
 end
 
 function tmux_reload 
-    $HOME/.scripts/tmux.fish
+    $HOME/.scripts/tmux_reloader.fish
+end
+
+function rofi_reload 
+    ln -sf ~/.config/rofi/theme/menu_launcher/$THEME.conf ~/.config/rofi/menu_launcher/theme.conf
+    ln -sf ~/.config/rofi/theme/menu_themes$THEME.conf ~/.config/rofi/menu_themes/theme.conf
+    ln -sf ~/.config/rofi/theme/menu_shortcuts$THEME.conf ~/.config/rofi/menu_shortcuts/theme.conf
+    ln -sf ~/.config/rofi/theme/menu_power$THEME.conf ~/.config/rofi/menu_power/theme.conf
 end
 
 echo $argv[1]
@@ -36,6 +43,7 @@ else if test "$argv[1]" = "--gruvbox-light"
 end
 echo "THEME: $THEME"
 nvim_reload
+rofi_reload
 tmux_reload
 kitty_reload
 mako_reload
