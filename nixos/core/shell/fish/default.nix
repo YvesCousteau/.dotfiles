@@ -43,7 +43,9 @@
       starship init fish | source
       fish_vi_key_bindings
 
-      set -U THEME gruvbox-light
+      if not set -q THEME
+          set -U THEME gruvbox-light
+      end
 
       fzf --fish | source
     '';
