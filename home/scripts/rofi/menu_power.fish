@@ -10,7 +10,7 @@ set no '󰅖 No'
 function rofi_cmd
 	rofi -dmenu \
 		-p "$host" \
-		-theme $HOME/.config/rofi/theme/menu_power/theme.rasi
+		-theme $HOME/.config/rofi/theme/menu_power/$THEME.rasi
 end
 
 function confirm_cmd
@@ -22,7 +22,7 @@ function confirm_cmd
 		-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
-		-theme $HOME/.config/rofi/theme/menu_power/theme.rasi
+		-theme $HOME/.config/rofi/theme/menu_power/$THEME.rasi
 end
 
 function confirm_exit

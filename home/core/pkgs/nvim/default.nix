@@ -26,6 +26,7 @@
       ${builtins.readFile ./plugins/tokyonight.lua}
       ${builtins.readFile ./plugins/which-key.lua}
       ${builtins.readFile ./plugins/conform.lua}
+      ${builtins.readFile ./plugins/notify.lua}
       ${builtins.readFile ./keybindings.lua}
     '';
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/vim-plugin-names

@@ -24,7 +24,3 @@ end
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = run_script_on_start
 })
-
-require("notify").setup({
-    background_colour = "#000000",
-})
