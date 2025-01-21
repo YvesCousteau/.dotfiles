@@ -4,8 +4,8 @@ let
     exec = $HOME/.scripts/waybar.fish
   '' else "";
   hyprpaperCommand = ''
-    exec-once = hyprpaper
-    exec-once = while true; do $HOME/.scripts/wallpapers_rand.sh; sleep 900; done
+    exec = hyprpaper
+    exec = $HOME/.scripts/misc/wallpapers_rand.fish
   '';
   hyprlandConf = pkgs.substituteAll {
     src = ./hyprland.conf;
@@ -42,12 +42,16 @@ in
   };
 
   home.file = {
-    ".scripts/theme_reloader.fish" = {
-      source = builtins.toString ../../scripts/theme_reloader.fish;
+    ".scripts/misc/loading_notif.fish" = {
+      source = builtins.toString ../../scripts/misc/loading_notif.fish;
       executable = true;
     };
-    ".scripts/wallpapers_rand.fish" = {
-      source = builtins.toString ../../scripts/wallpapers_rand.fish;
+    ".scripts/misc/theme_reloader.fish" = {
+      source = builtins.toString ../../scripts/misc/theme_reloader.fish;
+      executable = true;
+    };
+    ".scripts/misc/wallpapers_rand.fish" = {
+      source = builtins.toString ../../scripts/misc/wallpapers_rand.fish;
       executable = true;
     };
     ".wallpapers" = {

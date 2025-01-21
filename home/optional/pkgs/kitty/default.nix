@@ -30,14 +30,7 @@
     '';
   };
 
-  xdg.configFile = {
-    "kitty/theme/gruvbox-light.conf" = {
-      source = ./theme/gruvbox-light.conf;
-    };
-    "kitty/theme/tokyonight-dark.conf" = {
-      source = ./theme/tokyonight-dark.conf;
-    };
-  };
+  xdg.configFile."kitty/theme".source = ./theme;
 
   home.file = {
     ".scripts/tmux.fish" = {

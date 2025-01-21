@@ -43,21 +43,8 @@ in {
       # tmux-which-key
       # https://github.com/fabioluciano/tmux-tokyo-night
       tokyonight
-      # {
-      #   plugin = tokyonight;
-      #   extraConfig = ''
-      #     set -g @theme_variation 'night'
-      #     set -g @theme_left_separator ''
-      #     set -g @theme_right_separator ''
-      #     set -g @theme_plugins 'datetime,weather,playerctl,yay'
-      #   '';
-      # }
       # https://github.com/egel/tmux-gruvbox
-      {
-        plugin =  gruvbox;
-        extraConfig = ''
-        '';
-      }
+      gruvbox
     ];
     prefix = "C-f";
     keyMode = "vi";
