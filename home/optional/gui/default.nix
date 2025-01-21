@@ -1,28 +1,23 @@
 { pkgs, lib, mergedSetup, ... }:
 let
-  waybarCommand = if mergedSetup.gui.full or false then ''
+  waybarCommand = ''
     exec = $HOME/.scripts/waybar.fish
   '' else "";
-  hyprpaperCommand = if mergedSetup.gui.full or false then ''
+  hyprpaperCommand = ''
     exec-once = hyprpaper
     exec-once = while true; do $HOME/.scripts/wallpapers_rand.sh; sleep 900; done
-  '' else ''
-    exec-once = hyprpaper
   '';
   hyprlandConf = pkgs.substituteAll {
     src = ./hyprland.conf;
     waybar_command = waybarCommand;
     hyprpaper_command = hyprpaperCommand;
-    animations_enable = if mergedSetup.gui.full or false then "true" else "false";
+    animations_enable = "true";
     custom = mergedSetup.gui.extra.hyprland;
   };
 in
 {
   imports = 
-    (lib.optionals mergedSetup.gui.full [
       ../pkgs/waybar 
-    ]) ++
-    [
       ../pkgs/mako
       ../pkgs/kitty 
       ../pkgs/rofi 
