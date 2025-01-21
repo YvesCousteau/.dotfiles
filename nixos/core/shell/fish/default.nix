@@ -44,7 +44,7 @@
       fish_vi_key_bindings
 
       if not set -q THEME
-          set -U THEME gruvbox-light
+          set -xU THEME gruvbox-light
       end
 
       fzf --fish | source

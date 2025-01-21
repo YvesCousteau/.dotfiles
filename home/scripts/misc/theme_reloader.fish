@@ -24,12 +24,12 @@ end
 
 echo $argv[1]
 if test "$argv[1]" = "--tokyonight-dark"
-    set -U THEME "tokyonight-dark"
+    set -xU THEME "tokyonight-dark"
     hyprland_reload
     hyprctl keyword general:col.active_border "rgba(a9b1d6ff)" 2&> /dev/null
     hyprctl keyword general:col.inactive_border "rgba(1a1b26ff)" 2&> /dev/null
 else if test "$argv[1]" = "--gruvbox-light"
-    set -U THEME "gruvbox-light"
+    set -xU THEME "gruvbox-light"
     hyprland_reload
     hyprctl keyword general:col.active_border "rgba(3c3836ff)" 2&> /dev/null
     hyprctl keyword general:col.inactive_border "rgba(fbf1c7ff)" 2&> /dev/null

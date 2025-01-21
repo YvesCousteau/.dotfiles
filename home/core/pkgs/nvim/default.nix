@@ -16,18 +16,18 @@
       set shadafile=~/.local/share/nvim/custom.shada
     '';
     extraLuaConfig = ''
-      ${builtins.readFile ./config.lua}
+      ${builtins.readFile ./plugins/gruvbox.lua}
+      ${builtins.readFile ./plugins/tokyonight.lua}
+      ${builtins.readFile ./plugins/notify.lua}
       ${builtins.readFile ./plugins/bufferline.lua}
       ${builtins.readFile ./plugins/colorizer.lua}
-      ${builtins.readFile ./plugins/gruvbox.lua}
       ${builtins.readFile ./plugins/nvim-tree.lua}
       ${builtins.readFile ./plugins/rest-nvim.lua}
       ${builtins.readFile ./plugins/toggleterm.lua}
-      ${builtins.readFile ./plugins/tokyonight.lua}
       ${builtins.readFile ./plugins/which-key.lua}
       ${builtins.readFile ./plugins/conform.lua}
-      ${builtins.readFile ./plugins/notify.lua}
       ${builtins.readFile ./keybindings.lua}
+      ${builtins.readFile ./config.lua}
     '';
     # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/vim-plugin-names
     plugins = with pkgs.vimPlugins; [

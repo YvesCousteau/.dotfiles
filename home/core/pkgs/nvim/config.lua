@@ -11,16 +11,11 @@ vim.g.loaded_netrwPlugin = 1
 -- Enable 24-bit color
 vim.opt.termguicolors = true
 
-local function run_script_on_start()
-    local result = vim.fn.system(vim.env.HOME .. "/.scripts/nvim.fish")
-    if vim.v.shell_error ~= 0 then
-        require("notify")("Script execution failed: " .. result, "error")
-    else
-        require("notify")("Script executed successfully: " .. result, "info")
-    end
-    require("notify")("Neovim start!", "info")
-end
 
-vim.api.nvim_create_autocmd("VimEnter", {
-    callback = run_script_on_start
-})
+local result = vim.fn.system(vim.env.HOME .. "/.scripts/nvim.fish")
+if vim.v.shell_error ~= 0 then
+    require("notify")("Script execution failed: " .. result, "error")
+else
+    require("notify")("Script executed successfully: " .. result, "info")
+end
+require("notify")("Neovim start! ", "info")
