@@ -17,4 +17,4 @@ timeout = 100
 border-color=#bf616a
 default-timeout=0
 
-./test
+./theme.conf

@@ -33,5 +33,5 @@ in {
         extraConfig = builtins.toString ./config;
   };
 
-  xdg.configFile."mako/test".source = ./test;
+  xdg.configFile."mako/theme".source = ./theme;
 }

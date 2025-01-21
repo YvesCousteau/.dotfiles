@@ -5,6 +5,11 @@ function kitty_reload
     kill -SIGUSR1 $(pgrep kitty)
 end
 
+function mako_reload 
+    ln -sf ~/.config/mako/theme/$THEME.conf ~/.config/mako/theme.conf
+    kill -SIGUSR1 $(pgrep kitty)
+end
+
 function hyprland_reload 
     hyprctl reload
 end
@@ -20,6 +25,7 @@ if test "$argv[1]" = "--tokyonight-dark"
     hyprland_reload
     hyprctl keyword general:col.active_border "rgba(a9b1d6ff)" 2&> /dev/null
     hyprctl keyword general:col.inactive_border "rgba(1a1b26ff)" 2&> /dev/null
+
 else if test "$argv[1]" = "--gruvbox-light"
     set -U THEME "gruvbox-light"
     set tmux_path $(nix eval --raw nixpkgs#tmuxPlugins.gruvbox.outPath)
@@ -34,3 +40,4 @@ else if test "$argv[1]" = "--gruvbox-light"
 end
 echo "THEME: $THEME"
 kitty_reload
+mako_reload
