@@ -37,8 +37,8 @@
       source = builtins.toString ../../../scripts/tmux.fish;
       executable = true;
     };
-    ".scripts/term.fish" = {
-      source = builtins.toString ../../../scripts/term.fish;
+    ".scripts/kitty.fish" = {
+      source = builtins.toString ../../../scripts/kitty.fish;
       executable = true;
     };
   };

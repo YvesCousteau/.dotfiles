@@ -2,7 +2,7 @@
 let
   waybarCommand = ''
     exec = $HOME/.scripts/waybar.fish
-  '' else "";
+  '';
   hyprpaperCommand = ''
     exec = hyprpaper
     exec = $HOME/.scripts/misc/wallpapers_rand.fish
@@ -16,13 +16,13 @@ let
   };
 in
 {
-  imports = 
-      ../pkgs/waybar 
-      ../pkgs/mako
-      ../pkgs/kitty 
-      ../pkgs/rofi 
-      ../pkgs/mpv 
-    ];
+  imports = [ 
+    ../pkgs/waybar 
+    ../pkgs/mako
+    ../pkgs/kitty 
+    ../pkgs/rofi 
+    ../pkgs/mpv 
+  ];
 
   xdg.configFile = {
     "hypr/hyprland.conf".source = hyprlandConf;
