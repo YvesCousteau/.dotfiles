@@ -15,7 +15,7 @@ function hyprland_reload
 end
 
 function nvim_reload 
-    $HOME/.scripts/nvim.fish
+    $HOME/.scripts/nvim_reloader.fish
 end
 
 function tmux_reload 
