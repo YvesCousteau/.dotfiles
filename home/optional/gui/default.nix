@@ -6,6 +6,7 @@ let
   hyprpaperCommand = ''
     exec = hyprpaper
     exec = $HOME/.scripts/misc/wallpapers_rand.fish
+    exec = $HOME/.scripts/hypr_reloader.fish
   '';
   hyprlandConf = pkgs.substituteAll {
     src = ./hyprland.conf;
@@ -42,8 +43,8 @@ in
   };
 
   home.file = {
-    ".scripts/nvim.fish" = {
-      source = builtins.toString ../../scripts/nvim.fish;
+    ".scripts/hypr_reloader.fish" = {
+      source = builtins.toString ../../scripts/hypr_reloader.fish;
       executable = true;
     };
     ".scripts/misc/loading_notif.fish" = {

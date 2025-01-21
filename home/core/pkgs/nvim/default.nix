@@ -4,6 +4,14 @@
     EDITOR = "nvim";
   };
 
+  home.file = {
+    ".scripts/nvim_reloader.fish" = {
+      source = builtins.toString ../../scripts/nvim_reloader.fish;
+      executable = true;
+    };
+  };
+
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;

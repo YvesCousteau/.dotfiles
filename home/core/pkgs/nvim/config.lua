@@ -12,7 +12,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 
-local result = vim.fn.system(vim.env.HOME .. "/.scripts/nvim.fish")
+local result = vim.fn.system(vim.env.HOME .. "/.scripts/nvim_reloader.fish")
 if vim.v.shell_error ~= 0 then
     require("notify")("Script execution failed: " .. result, "error")
 else
