@@ -21,3 +21,11 @@ function _G.ReloadConfig()
     dofile(vim.env.HOME .. "/.config/nvim/init.lua")
     vim.notify("Neovim configuration reloaded!", vim.log.levels.INFO)
 end
+
+local function run_script_on_start()
+  vim.fn.system(vim.env.HOME .. "/.script/nvim.fish")  -- Replace "your-script.sh" with the actual script you want to run
+end
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = run_script_on_start
+})

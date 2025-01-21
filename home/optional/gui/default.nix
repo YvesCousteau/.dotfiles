@@ -42,6 +42,10 @@ in
   };
 
   home.file = {
+    ".scripts/nvim.fish" = {
+      source = builtins.toString ../../scripts/nvim.fish;
+      executable = true;
+    };
     ".scripts/misc/loading_notif.fish" = {
       source = builtins.toString ../../scripts/misc/loading_notif.fish;
       executable = true;
