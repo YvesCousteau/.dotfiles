@@ -32,4 +32,6 @@ in {
         defaultTimeout = 5000;
         extraConfig = builtins.toString ./config;
   };
+
+  xdg.configFile."mako/test".source = ./test;
 }
