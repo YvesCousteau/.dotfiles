@@ -7,17 +7,27 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
-    ../disk-config.nix
+    ../../nixos/disk-config.nix
   ];
 
-  services = {
-    displayManager = {
-      autoLogin.enable = true;
-      autoLogin.user = "me";
-    };
+  boot.loader = {
+    grub.efiInstallAsRemovable = true;
+    efi.canTouchEfiVariables = false;
   };
 
-  disko.devices.disk.disk1.device = "/dev/nvme0n1";
+  users.users.root.openssh.authorizedKeys.keys = [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMc6jbhoDuKt0YOIF9prT4reT9WG6sP2sEFVj59loQwq me@desktop-hood"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAq7LsVEV+jw4yPpLyDc4XIS2yVmSJt0J24pS4BQYtGD me@laptop-work"
+  ];
+
+  # services = {
+  #   displayManager = {
+  #     autoLogin.enable = true;
+  #     autoLogin.user = "me";
+  #   };
+  # };
+
+  disko.devices.disk.disk1.device = "/dev/nvme1n1";
 
   # networking = {
   # wg-quick = {

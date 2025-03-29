@@ -6,6 +6,7 @@
 }:
 {
   boot = {
+
     loader = {
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = lib.mkDefault true;
@@ -27,7 +28,10 @@
       vfat = true;
       lvm2 = true;
     };
-    initrd.availableKernelModules = [ "dm-mod" ];
+    initrd = {
+      availableKernelModules = [ "dm-mod" ];
+      services.lvm.enable = true;
+    };
 
     # 0	EMERG	System is unusable
     # 1	ALERT	Immediate action required
